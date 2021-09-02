@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "241674472454",
+    "project_id": "iesb-android-9d477",
+    "storage_bucket": "iesb-android-9d477.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241674472454:android:bff8b4c436647eef41c787",
+        "android_client_info": {
+          "package_name": "com.example.projeto_aula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241674472454-867bft4c4pd6mefvvdqgsl483el08pdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcQ1NzEE7wPF8nSAc7NnXbCWuRwUxXC6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241674472454-867bft4c4pd6mefvvdqgsl483el08pdr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

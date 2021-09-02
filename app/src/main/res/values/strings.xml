@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Projeto_Aula</string>
+    <string name="action_sign_in_facebook">Sign in com Facebook</string>
+    <string name="facebook_app_id">276306340972119</string>
+</resources>

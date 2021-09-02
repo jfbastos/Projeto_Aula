@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-mail"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_email"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@id/label_email"
+            app:layout_constraintTop_toBottomOf="@id/label_email"/>
+
+        <TextView
+            android:id="@+id/label_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/input_email"
+            app:layout_constraintTop_toBottomOf="@id/input_email"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_password"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            app:layout_constraintStart_toStartOf="@id/label_password"
+            app:layout_constraintTop_toBottomOf="@id/label_password"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            app:layout_constraintStart_toStartOf="@id/input_password"
+            app:layout_constraintTop_toBottomOf="@id/input_password"/>
+
+        <Button
+            android:id="@+id/btn_cadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toEndOf="@id/btn_login"
+            app:layout_constraintBottom_toBottomOf="@id/btn_login"/>
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            app:layout_constraintEnd_toEndOf="@id/btn_cadastrar"/>
+
+        <TextView
+            android:id="@+id/textinput_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User not found!"
+            android:textColor="#FD0A0A"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/input_email"
+            app:layout_constraintStart_toStartOf="@id/input_email"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
