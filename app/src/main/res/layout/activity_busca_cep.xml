@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.BuscaCepActivity">
+
+    <data>
+
+        <variable
+            name="cep"
+            type="com.example.projeto_aula.model.cep.Cep" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="12dp">
+
+            <TextView
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cep" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cep_input_text"
+                android:layout_width="338dp"
+                android:layout_height="48dp"
+                android:hint="@string/digite_seu_cep"
+                android:inputType="number"
+                android:textColorHint="@color/black" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/dados"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rectanglebox"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/label_cep"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cep"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.cep, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/label_cep"
+                app:layout_constraintStart_toEndOf="@+id/label_cep" />
+
+            <TextView
+                android:id="@+id/label_logradouro"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logradouro"
+                app:layout_constraintStart_toStartOf="@id/label_cep"
+                app:layout_constraintTop_toBottomOf="@id/label_cep" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.logradouro, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/label_logradouro"
+                app:layout_constraintStart_toEndOf="@id/label_logradouro" />
+
+            <TextView
+                android:id="@+id/label_complemento"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/complemento"
+                app:layout_constraintStart_toStartOf="@id/label_logradouro"
+                app:layout_constraintTop_toBottomOf="@id/label_logradouro" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.complemento, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/label_complemento"
+                app:layout_constraintStart_toEndOf="@id/label_complemento" />
+
+            <TextView
+                android:id="@+id/label_bairro"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bairro"
+                app:layout_constraintStart_toStartOf="@id/label_complemento"
+                app:layout_constraintTop_toBottomOf="@id/label_complemento" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.bairro, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/label_bairro"
+                app:layout_constraintStart_toEndOf="@id/label_bairro" />
+
+            <TextView
+                android:id="@+id/label_localidade"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/localidade"
+                app:layout_constraintStart_toStartOf="@id/label_bairro"
+                app:layout_constraintTop_toBottomOf="@id/label_bairro" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.localidade, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/label_localidade"
+                app:layout_constraintStart_toEndOf="@id/label_localidade" />
+
+            <TextView
+                android:id="@+id/label_UF"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/uf"
+                app:layout_constraintStart_toStartOf="@id/label_localidade"
+                app:layout_constraintTop_toBottomOf="@id/label_localidade" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.uf, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/label_UF"
+                app:layout_constraintStart_toEndOf="@id/label_UF" />
+
+            <TextView
+                android:id="@+id/label_ddd"
+                style="@style/LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ddd"
+                app:layout_constraintStart_toStartOf="@id/label_UF"
+                app:layout_constraintTop_toBottomOf="@id/label_UF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{cep.ddd, default=Vazio}"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/label_ddd"
+                app:layout_constraintStart_toEndOf="@id/label_ddd" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/hist_rico"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cepList"
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/rectanglebox"
+            tools:listitem="@layout/cep_item" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="36dp"
+            android:backgroundTint="@color/purple_200"
+            android:contentDescription="@string/do_search"
+            android:src="@drawable/ic_baseline_search_24" />
+    </LinearLayout>
+</layout>

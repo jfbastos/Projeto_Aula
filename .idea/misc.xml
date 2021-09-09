@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jfbas/AndroidStudioProjects/Projeto_Aula/app/src/main/res/drawable/rectanglebox.xml" value="0.2450657894736842" />
         <entry key="..\:/Users/jfbas/AndroidStudioProjects/Projeto_Aula/app/src/main/res/layout/activity_auth.xml" value="0.25" />
+        <entry key="..\:/Users/jfbas/AndroidStudioProjects/Projeto_Aula/app/src/main/res/layout/activity_busca_cep.xml" value="0.24324324324324326" />
         <entry key="..\:/Users/jfbas/AndroidStudioProjects/Projeto_Aula/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/jfbas/AndroidStudioProjects/Projeto_Aula/app/src/main/res/layout/cep_item.xml" value="0.2348684210526316" />
+        <entry key="..\:/Users/jfbas/AndroidStudioProjects/Projeto_Aula/app/src/main/res/layout/data_cep_layout.xml" value="0.2348684210526316" />
       </map>
     </option>
   </component>

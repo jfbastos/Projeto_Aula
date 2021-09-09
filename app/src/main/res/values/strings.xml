@@ -2,4 +2,20 @@
     <string name="app_name">Projeto_Aula</string>
     <string name="action_sign_in_facebook">Sign in com Facebook</string>
     <string name="facebook_app_id">276306340972119</string>
+    <string name="cep">CEP:</string>
+    <string name="digite_seu_cep">Digite seu cep</string>
+    <string name="dados">Dados</string>
+    <string name="logradouro">Logradouro:</string>
+    <string name="complemento">Complemento:</string>
+    <string name="bairro">Bairro:</string>
+    <string name="localidade">Localidade:</string>
+    <string name="uf">UF:</string>
+    <string name="ddd">DDD:</string>
+    <string name="hist_rico">Histórico</string>
+    <string name="do_search">Do search</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="user_not_found">User not found!</string>
 </resources>

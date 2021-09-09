@@ -1,7 +1,6 @@
 package com.example.projeto_aula.view
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,8 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.projeto_aula.R
 import com.example.projeto_aula.databinding.ActivityAuthBinding
-import com.example.projeto_aula.model.AuthRepository
-import com.example.projeto_aula.model.User
+import com.example.projeto_aula.model.auth.AuthRepository
+import com.example.projeto_aula.model.auth.User
 import com.example.projeto_aula.viewmodel.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -42,39 +41,39 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun initRegistersAndObservers() {
-        binding.btnCadastrar.setOnClickListener{
+        binding.btnCadastrar.setOnClickListener {
             binding.textinputError.visibility = View.INVISIBLE
             val email = binding.inputEmail.text.toString()
             val password = binding.inputPassword.text.toString()
 
-            if(email.isNotBlank() && password.isNotBlank()) {
-                authViewModel.signInWithEmail(email,password)
+            if (email.isNotBlank() && password.isNotBlank()) {
+                authViewModel.signInWithEmail(email, password)
             }
 
             authViewModel.authenticatedUserLiveData.observe(this) { user ->
-               if(user != null){
-                   goToMainActivity(user)
-               }else{
-                   binding.textinputError.text = "Usuário já existe"
-                   binding.textinputError.visibility = View.VISIBLE
-               }
+                if (user != null) {
+                    goToMainActivity(user)
+                } else {
+                    binding.textinputError.text = "Usuário já existe"
+                    binding.textinputError.visibility = View.VISIBLE
+                }
             }
         }
 
-        binding.btnLogin.setOnClickListener{
+        binding.btnLogin.setOnClickListener {
             binding.textinputError.visibility = View.INVISIBLE
             val email = binding.inputEmail.text.toString()
             val password = binding.inputPassword.text.toString()
 
-            if(email.isNotBlank() && password.isNotBlank()) {
-                authViewModel.logInWithEmail(email,password)
+            if (email.isNotBlank() && password.isNotBlank()) {
+                authViewModel.logInWithEmail(email, password)
             }
 
             authViewModel.authenticatedUserLiveData.observe(this) { user ->
-                if(user != null){
+                if (user != null) {
 
                     goToMainActivity(user)
-                }else{
+                } else {
                     binding.textinputError.text = "Usuario/senha inválido"
                     binding.textinputError.visibility = View.VISIBLE
                 }
@@ -94,16 +93,16 @@ class AuthActivity : AppCompatActivity() {
             }
         }
 
-//        authViewModel.authenticatedUserLiveData.observe(this) { user ->
-//            if(user.isNew){
-//                authViewModel.createUser(user)
-//            }else{
-//                goToMainActivity(user)
-//            }
-//        }
+        authViewModel.authenticatedUserLiveData.observe(this) { user ->
+            if (user.isNew) {
+                authViewModel.createUser(user)
+            } else {
+                goToMainActivity(user)
+            }
+        }
 
 
-        authViewModel.createdLiveData.observe(this){user ->
+        authViewModel.createdLiveData.observe(this) { user ->
             goToMainActivity(user)
         }
 
@@ -115,11 +114,11 @@ class AuthActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
 
         signInResultLaucher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
-                if(result.resultCode == RESULT_OK){
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
                     val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
                     val googleAccount = task.result
-                    if(googleAccount != null){
+                    if (googleAccount != null) {
                         getGoogleAuthCredential(googleAccount)
                     }
                 }
@@ -127,9 +126,9 @@ class AuthActivity : AppCompatActivity() {
 
     }
 
-    private fun goToMainActivity(user : User) {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(MainActivity.USER_EXTRA, user )
+    private fun goToMainActivity(user: User) {
+        val intent = Intent(this, BuscaCepActivity::class.java)
+        intent.putExtra(BuscaCepActivity.USER_EXTRA, user)
         startActivity(intent)
     }
 

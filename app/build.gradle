@@ -2,11 +2,18 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 
 }
 
 android {
     compileSdk 30
+
+
+    buildFeatures{
+        viewBinding = true
+    }
+
 
     dataBinding {
         enabled = true
@@ -37,8 +44,9 @@ android {
     }
 }
 
-def retrofitVersion = '2.8.8'
+def retrofitVersion = '2.9.0'
 def roomVersion = '2.3.0'
+def lifeCycleVersion = "2.3.1"
 
 dependencies {
 
@@ -50,11 +58,15 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.4.0')
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.3'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson$retrofitVersion"
-    implementation "androidx.room:room-runtime:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "androidx.room:room-runtime:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
 
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion"
+    //LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
